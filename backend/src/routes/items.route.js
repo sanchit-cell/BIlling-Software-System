@@ -18,11 +18,7 @@ router.get("/get/:id",Params_id,Validation,ItemsController.getById)
 router.patch("/update/:id",RegisterItem,Validation,ItemsController.updateById)
 router.get("/get-all",query_page,Validation,ItemsController.GetAllitems)
 
-// router.route("/get-invoice/:id")
-// .get(OrdersController.getInvoiceById)
 
-// router.route("/delete/:id")
-// .delete(OrdersController.deleteOrder)
 
 
 module.exports = router
