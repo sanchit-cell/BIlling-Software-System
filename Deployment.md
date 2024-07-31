@@ -1,7 +1,7 @@
 
 ### Deployment
 
-## Deployed Application
+# Deployed Application
 The application is deployed on a cloud platform and can be accessed at the following link:
 [Deployed Site](https://billing-software-0owd.onrender.com/)
 
