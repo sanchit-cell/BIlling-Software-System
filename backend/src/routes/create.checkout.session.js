@@ -7,7 +7,10 @@ const stripe = require("stripe")("sk_test_51Pi0gZ2MYvAYdxOMPqXpTPaDXjzkntCYnusDP
 
 module.exports = router
 router.use(Authentication);
-
+const frontend = process.env.NODE_ENV==="production"?
+                "https://billing-software-0owd.onrender.com/orders"
+                :"http://localhost:5173/orders"
+                
 
 router.post("/create-checkout-session",async(req,res)=>{
     const {products,orderId} = req.body
@@ -31,8 +34,8 @@ router.post("/create-checkout-session",async(req,res)=>{
         line_items:lineItems,
         mode: "payment",
         
-        success_url:"https://billing-software-0owd.onrender.com/orders",
-        cancel_url: "https://billing-software-0owd.onrender.com/cancel",
+        success_url:frontend,
+        cancel_url: frontend,
         metadata: {
             orderId: orderId,
             userid : userid
