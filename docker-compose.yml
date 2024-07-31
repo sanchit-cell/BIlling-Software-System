@@ -1,0 +1,65 @@
+# version: '3.8'
+
+# services:
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "8000:8000"
+#     environment:
+#       MONGO_URI: mongodb+srv://admin:admin@cluster1.dx1au9e.mongodb.net/Inventory-M-S?retryWrites=true&w=majority&appName=Cluster1
+#       JWT_AUTH : "@#$%^&*(@#$%^&*($%^))#$%^&"
+#       CAPTCHA_SCREATE_KEY: 6LcIGRkqAAAAAByRk9PqHMVYlGCSuJ5o_-TFCUem
+#       PORT: 8000
+#       NODE_ENV : production
+#     depends_on:
+#       - mongo
+
+#   frontend:
+#     build: ./frontend
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - backend
+
+#   mongo:
+#     image: mongo:latest
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo-data:/data/db
+
+# volumes:
+#   mongo-data:
+
+
+version: "3"
+services:
+  react-app:
+    image: my-vite-app
+    stdin_open: true
+    ports: 
+      - "5173:5173"
+    networks:
+      - mern-app
+  api-server:
+    image: api-server
+    ports:
+      - "8000:8000"
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.4.15
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
