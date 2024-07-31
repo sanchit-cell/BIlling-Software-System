@@ -7,7 +7,7 @@ This guide provides an overview of how to use the billing software, from logging
 
 1. Click on the "Login" button.
 2. Use the following credentials to login as a test user:
-   - **Email:** EV Shop Owner
+   - **Email:** owner@evshop.com
    - **Password:** admin
 
 > **Note:** This test user has some seeded data in the database already.
