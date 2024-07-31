@@ -3,10 +3,7 @@ const { MongoClient } = require('mongodb');
 const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
 async function seed() {
-  // const url = "mongodb+srv://admin:admin@cluster1.dx1au9e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
-  // const url = process.env.NODE_ENV === 'production'
-  // ?"mongodb+srv://admin:admin@cluster1.dx1au9e.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
-  // :'mongodb://127.0.0.1:27017'
+  
   const url =
     process.env.NODE_ENV === "production"
       ? process.env.MONGODB_URI_ATLAS
