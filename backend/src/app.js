@@ -24,6 +24,11 @@ app.use("/api/v1/pay/",require("./routes/webhook"))
 app.use(express.json({limit:'10mb'}))
 app.use(express.urlencoded({extended:false}))
 
+// Health check endpoint for Render
+app.get("/", (req, res) => {
+    res.status(200).json({ status: "ok", message: "Billing Software API is running" })
+})
+
 app.use("/api/v1",require("./routes"))
 
 app.use("*",(req,res)=>{
