@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Login from "../pages/Login";
+import Login from "../pages/LoginNew";
 import Register from "../pages/Register";
-import HomePage from "../pages/Home"; 
+import HomePage from "../pages/Home/indexNew"; 
 import ErrorPage from "../pages/Error";
 import Invoice from "../pages/Invoice";
 import UserPage from "../pages/Users";
-import OrdersPage from "../pages/Orders";
-import inventory from "../pages/Inventory";
+import OrdersPage from "../pages/Orders/indexNew";
+import InventoryPage from "../pages/Inventory/indexNew";
 
 export const Routes = createBrowserRouter([
     {
@@ -31,7 +31,7 @@ export const Routes = createBrowserRouter([
                 Component: OrdersPage
             },{
                 path : "/inventory",
-                Component: inventory
+                Component: InventoryPage
             }
             
             ,{
