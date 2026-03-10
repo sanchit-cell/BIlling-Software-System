@@ -10,7 +10,6 @@ import {
   TableSkeleton,
   Pagination,
   Badge,
-  StockBadge,
 } from '../../components/ui';
 import { useDebounce } from '../../hooks/useDebounce';
 import TableCard from './Components/Card.inventory';

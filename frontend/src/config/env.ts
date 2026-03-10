@@ -1,14 +1,5 @@
 // Environment validation and configuration
 
-interface EnvConfig {
-  VITE_BACKEND_URL: string;
-  VITE_BACKEND_URL_PRODUCTION: string;
-  VITE_BACKEND_URL_LOCAL: string;
-  VITE_NODE_ENV: 'development' | 'production';
-  VITE_SITE_KEY: string;
-  VITE_STRIPE_PUBLIC_KEY?: string;
-}
-
 // Helper to get environment variables with fallbacks
 const getEnvVar = (key: string, fallback?: string): string => {
   const value = import.meta.env[key];
