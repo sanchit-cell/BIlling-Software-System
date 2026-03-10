@@ -21,7 +21,10 @@ const routes= [
     {
         path:"/pay",
         route:require("./create.checkout.session")
-
+    },
+    {
+        path:"/dashboard",
+        route:require("./Dashboard.route")
     }
 ]
 
